@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/17/Hexo +  Github pages 搭建个人博客教程/index.html">
 <meta property="og:site_name" content="Ryan_LH的博客">
 <meta property="og:description" content="一、配置Github首先注册、登录https://github.com 然后Create a new repository https://github.com/new Repository name 必须是github的username，以后博客的地址就是http://username.github.io 二、系统环境配置安装node.js下载地址：https://nodejs.org/en/">
-<meta property="og:updated_time" content="2017-04-17T05:46:53.896Z">
+<meta property="og:updated_time" content="2017-04-17T05:53:18.737Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo +  Github pages 搭建个人博客教程">
 <meta name="twitter:description" content="一、配置Github首先注册、登录https://github.com 然后Create a new repository https://github.com/new Repository name 必须是github的username，以后博客的地址就是http://username.github.io 二、系统环境配置安装node.js下载地址：https://nodejs.org/en/">
@@ -101,15 +101,10 @@
 <h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>下载地址：<a href="http://git-scm.com/download/" target="_blank" rel="external">http://git-scm.com/download/</a></p>
 <p>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，在命令行输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;Your Name&quot;</div><div class="line">$ git config --global user.email &quot;email@example.com&quot;</div></pre></td></tr></table></figure>
-<blockquote>
 <p>参考<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的Git教程</a></p>
-</blockquote>
 <h2 id="三、Hexo安装与使用"><a href="#三、Hexo安装与使用" class="headerlink" title="三、Hexo安装与使用"></a>三、Hexo安装与使用</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd d:/hexo # 设置路径，以后的博客文件就放在这里</div><div class="line">$ npm install hexo-cli -g</div></pre></td></tr></table></figure>
 <h3 id="Hexo建站"><a href="#Hexo建站" class="headerlink" title="Hexo建站"></a>Hexo建站</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ hexo init blog</div><div class="line">$ cd blog</div><div class="line">$ npm install</div><div class="line">$ hexo g # 或者hexo generate</div><div class="line">$ hexo s # 或者hexo server</div></pre></td></tr></table></figure>
-<p>当用户看到以下信息时表示本地端口已经打开，这时就可以通过浏览器访问<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 来预览网站。</p>
-<blockquote>
-<p>INFO Hexo is running at <a href="http://0.0.0.0:4000/" target="_blank" rel="external">http://0.0.0.0:4000/</a>. Press Ctrl+C to stop.</p>
-</blockquote>
+<p>这时就可以通过浏览器访问<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 来预览网站</p>
 <p>然后输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;Github的注册邮箱地址&quot;</div></pre></td></tr></table></figure>
 <p>一路Enter过来就好，得到信息：</p>
@@ -118,31 +113,23 @@
 <p>New SSH key ——Title：blog —— Key：输入刚才复制的—— Add SSH key</p>
 <p>修改网站相关信息</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: XXXXX</div><div class="line">subtitle: XXXXX</div><div class="line">description: XXXXX</div><div class="line">author: XXXXX</div><div class="line">language: zh-CN</div><div class="line">timezone: Asia/Shanghai</div></pre></td></tr></table></figure>
-<blockquote>
 <p>参考<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/configuration.html</a></p>
-</blockquote>
 <p>前往hexo主目录下的_config.xml（用编译器打开）中作如下修改：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy</div><div class="line">	type: git</div><div class="line">	repo: git@github.com:username/username.github.io.git</div><div class="line">	branch: master</div></pre></td></tr></table></figure>
-<blockquote>
 <p>注意：每个冒号后需有一个空格</p>
-</blockquote>
 <p>由于使用Git部署，在部署网站前须安装hexo-deployer-git，只需在hexo目录下执行：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
 <h2 id="四、发表文章"><a href="#四、发表文章" class="headerlink" title="四、发表文章"></a>四、发表文章</h2><p>创建新文章十分简单，可以直接将已写好的markdown格式文章放入_posts目录，也可通过<code>new</code>命令创建。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new &lt;title&gt;</div></pre></td></tr></table></figure>
 <p>需要注意的是，在直接将文件放入目录中时，请在markdown文件内容前加上以下内容，以帮助解析。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">title: XXXXX</div><div class="line">date: XXXX-XX-XX</div><div class="line">categories: XX</div><div class="line">tags: [XX,XX,XX]</div><div class="line">---</div></pre></td></tr></table></figure>
-<blockquote>
 <p>Markdown语法可查看markdown的<a href="http://www.appinn.com/markdown/" target="_blank" rel="external">官方文档</a>。</p>
-</blockquote>
 <p>生成静态页面</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
 <p>发布到网站</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>发布成功后，便可登陆username.github.io查看你的网站了。</p>
-<blockquote>
 <p>需要注意的是，在每次部署前都需要静态化生成一次网站，可通过<code>$ hexo deploy --generate</code>实现部署前自动静态化生成。<br>每当网站内容或信息变更时，都需要deploy一次，才能使服务器端和本地同步。</p>
-</blockquote>
 <h2 id="五、其他高级技巧"><a href="#五、其他高级技巧" class="headerlink" title="五、其他高级技巧"></a>五、其他高级技巧</h2><h3 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h3><p>这里以主题yilia为例进行说明。</p>
 <h4 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</div></pre></td></tr></table></figure>
 <h4 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h4><p>修改Hexo目录下的_config.yml配置文件中的theme属性，将其设置为yilia。</p>
@@ -160,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/17/Hexo +  Github pages 搭建个人博客教程/" data-id="cj1lpdg8c0000d4vn7cn5myuh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/17/Hexo +  Github pages 搭建个人博客教程/" data-id="cj1lpfooa0001movnne6f5rkv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
